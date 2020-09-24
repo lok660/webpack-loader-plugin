@@ -1,11 +1,25 @@
 const path = require('path')
 
+const DonePlugin = require('./plugins/DonePlugins')
+const AsyncPlugins = require('./plugins/AsyncPlugins')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
+const FileListPlugin = require('./plugins/FileListPlugin')
+const InlineSourcePlugins = require('./plugins/InlineSourcePlugins')
+const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+
 module.exports = {
   mode: 'development',
   entry: './src/index.js',
   output: {
     filename: 'bundle.js',
     path: path.resolve(__dirname, 'dist')
+  },
+  //  清除控制台消息
+  stats: {
+    assets: false,
+    builtAt: false,
+    modules: false,
+    entrypoints: false
   },
   resolveLoader: {
     modules: ['node_modules', path.resolve(__dirname, 'loaders')],
@@ -41,5 +55,22 @@ module.exports = {
         use: ['style-loader', 'css-loader', 'less-loader']
       }
     ]
-  }
+  },
+  plugins: [
+    new DonePlugin(), // 同步插件
+    new AsyncPlugins(), // 异步插件
+    new HtmlWebpackPlugin({
+      template: './src/index.html',
+      filename: 'index.html'
+    }),
+    new MiniCssExtractPlugin({
+      filename: 'index.css'
+    }),
+    new InlineSourcePlugins({
+      match: /\.(js|css)/
+    }),
+    new FileListPlugin({
+      filename: 'list.md'
+    })
+  ]
 }
