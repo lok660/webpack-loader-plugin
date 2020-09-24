@@ -35,7 +35,10 @@ module.exports = {
           //   limit: 200 * 1024 //  // 大于200k产生文件，小200k生成base64
           // }
         },
-        exclude: /node_modules/
+      },
+      {
+        test: /\.less$/,
+        use: ['style-loader', 'css-loader', 'less-loader']
       }
     ]
   }

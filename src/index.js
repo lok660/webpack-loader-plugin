@@ -1,4 +1,5 @@
 // import './babel-test'
+import './index.less'
 
 import imgUrl from '../assets/king.png'
 
