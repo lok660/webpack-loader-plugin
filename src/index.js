@@ -1,13 +1,7 @@
-class Sherry {
-  constructor() {
-    this.name = 'Sherry'
-  }
-  getName () {
-    return this.name
-  }
-}
+// import './babel-test'
 
+import imgUrl from './vuehook.png'
 
-let may = new Sherry()
-
-console.log(may.getName());
+const img = document.createElement('img')
+img.src = imgUrl
+document.body.appendChild(img)
