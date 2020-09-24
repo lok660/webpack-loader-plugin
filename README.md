@@ -24,5 +24,6 @@ write self loader and plugin
 
 
 [Webpack 源码研究]: https://juejin.im/post/6844903903675285511#heading-7
-[Webpack源码探究打包流程，萌新也能看懂～]: https://juejin.im/post/6844903728735059976#heading-9
+[Webpack源码探究打包流程，萌新也能看懂]: https://juejin.im/post/6844903728735059976#heading-9
+[tapable简单实现]: https://github.com/zgfang1993/blog/issues/41
 
