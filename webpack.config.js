@@ -4,7 +4,7 @@ const DonePlugin = require('./plugins/DonePlugins')
 const AsyncPlugins = require('./plugins/AsyncPlugins')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const FileListPlugin = require('./plugins/FileListPlugin')
-const InlineSourcePlugins = require('./plugins/InlineSourcePlugins')
+// const InlineSourcePlugins = require('./plugins/InlineSourcePlugins')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 
 module.exports = {
@@ -66,9 +66,9 @@ module.exports = {
     new MiniCssExtractPlugin({
       filename: 'index.css'
     }),
-    new InlineSourcePlugins({
-      match: /\.(js|css)/
-    }),
+    // new InlineSourcePlugins({
+    //   match: /\.(js|css)/
+    // }),
     new FileListPlugin({
       filename: 'list.md'
     })
