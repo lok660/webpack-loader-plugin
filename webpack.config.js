@@ -30,11 +30,12 @@ module.exports = {
         test: [/\.bmp$/, /\.gif$/, /\.jpe?g$/, /\.png$/],
         // 1. 处理路径 通过file-loader处理 2.小文件生成base64
         use: {
-          loader: 'file-loader',
-          options: {
-            limit: 200 * 1024 //  // 大于200k产生文件，小200k生成base64
-          }
-        }
+          loader: 'url-loader',
+          // options: {
+          //   limit: 200 * 1024 //  // 大于200k产生文件，小200k生成base64
+          // }
+        },
+        exclude: /node_modules/
       }
     ]
   }
