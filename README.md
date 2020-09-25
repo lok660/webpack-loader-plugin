@@ -1,6 +1,8 @@
 # webpack-loader-plugin
 write self loader and plugin
 
+![img](https://user-gold-cdn.xitu.io/2019/8/1/16c4b3417efc25c2?imageslim)
+
 
 
 ## webpack基本流程
